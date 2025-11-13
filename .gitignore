@@ -1,0 +1,4 @@
+pyenv/
+.env
+/test.py
+/alter.py
