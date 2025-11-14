@@ -25,6 +25,8 @@ CowJacket Jira Python Automation is a Python-based automation tool designed to s
 
 ## 📸 Demo Output
 This shows the successfully created Jira issues using the automation script:
+
+
 ![Jira Automation Output](image.png)
 
 ## 🔐 Environment Setup
