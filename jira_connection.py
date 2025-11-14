@@ -47,24 +47,24 @@ def create_jira_issue(jira, project_key, row):
 
     summary = f"Phone Request - {newusername or samplename} ({departmentname})"
     description = f"""
-**Requester:** {newusername or samplename}
-**Job Title:** {job}
-**Department:** {departmentname}
-**Email:** {emailaddress}
-**Phone Number:** {phonenumber}
-**Cost Center:** {costcenter}
+*Customer Name:* {newusername or samplename}
+*Job Title:* {job}
+*Department:* {departmentname}
+*Email:* {emailaddress}
+*Phone Number:* {phonenumber}
+*Cost Center:* {costcenter}
 
-**Request Details:**
+*Request Details:*
 - Telephone Lines / Installations: {telephonelinesandinstallations}
 - Handsets / Headsets: {handsetsandheadsets}
 - Time Frame: {timeframe}
 - Date Needed By: {dateneededby}
 - Approximate Ending Date: {approximateendingdate}
 
-**Comments:**
+*Comments:*
 {comments or "N/A"}
 
-**Created At:** {createdat}
+*Created At:* {createdat}
 """
 
     issue = jira.create_issue(

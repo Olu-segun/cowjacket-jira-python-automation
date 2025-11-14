@@ -55,11 +55,6 @@ print(response.status_code)
 ## 🧾 Logging
 All API calls and responses are logged automatically to `automation_log.txt` for audit purposes.
 
-## 📊 Future Improvements
-- Add webhook integration for real-time updates from Jira.
-- Build a dashboard to visualize automation statistics.
-- Implement retry logic for failed API calls.
-
 ## 🤝 Contributing
 Pull requests are welcome! Please open an issue first to discuss changes.
 
