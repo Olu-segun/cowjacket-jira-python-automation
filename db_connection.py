@@ -7,8 +7,7 @@ load_dotenv()
 
 def connect_to_db():
     """
-    Establish a connection to the PostgreSQL database using environment variables,
-    execute a simple query, and return the results.
+    Establish a connection to the PostgreSQL database using environment variables
     """
     try:
         # Connect to PostgreSQL
@@ -48,12 +47,3 @@ def fetch_requests(cur):
         FROM phonerequest;
     """)
     return cur.fetchall()
-
-def update_request_status(cur, conn, request_id, jira_key):
-    """Mark request as synced with Jira ticket info."""
-    cur.execute("""
-        UPDATE phonerequest
-        SET jira_ticket_id = %s, jira_created_at = NOW()
-        WHERE id = %s;
-    """, (jira_key, request_id))
-    conn.commit()

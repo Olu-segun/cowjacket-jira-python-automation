@@ -1,4 +1,4 @@
-from db_connection import connect_to_db, fetch_requests, update_request_status
+from db_connection import connect_to_db, fetch_requests
 from jira_connection import connect_to_jira, create_jira_issue
 from dotenv import load_dotenv
 import os
@@ -17,17 +17,16 @@ def sync_requests_to_jira():
 
     # Fetch new requests
     rows = fetch_requests(cur)
-    print(f"🔍 Found {len(rows)} unsynced requests to create in Jira...")
+    print(f"🔍 Found {len(rows)} requests to create in Jira...")
 
     # Process each record
     for row in rows:
-        request_id = row[0]
+        requester_name = row[0]
         try:
             jira_key = create_jira_issue(jira, jira_project_key, row)
-            update_request_status(cur, conn, request_id, jira_key)
-            print(f"✅ Created Jira issue {jira_key} for request ID {request_id}")
+            print(f"✅ Created Jira issue {jira_key} for {requester_name}")
         except Exception as e:
-            print(f"❌ Error creating Jira issue for ID {request_id}: {e}")
+            print(f"❌ Error creating Jira issue for {requester_name}: {e}")
 
     cur.close()
     conn.close()

@@ -45,7 +45,7 @@ def create_jira_issue(jira, project_key, row):
         createdat
     ) = row
 
-    summary = f"Telecom Request - {newusername or samplename} ({departmentname})"
+    summary = f"Phone Request - {newusername or samplename} ({departmentname})"
     description = f"""
 **Requester:** {newusername or samplename}
 **Job Title:** {job}
@@ -71,7 +71,7 @@ def create_jira_issue(jira, project_key, row):
         project=project_key,
         summary=summary,
         description=description,
-        issuetype={"name": "Submit a request or incident"}  # Match your Jira project setup
+        issuetype={"name": "Submit a request or incident"} 
     )
 
     return issue.key

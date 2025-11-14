@@ -13,15 +13,19 @@ CowJacket Jira Python Automation is a Python-based automation tool designed to s
 
 ## ⚙️ Tech Stack
 - **Language:** Python 3.10+
-- **Libraries:** `requests`, `os`, `dotenv`, `json`
+- **Libraries:** `jira`,`psycopg2`,  `os`, `dotenv`, `json`
 - **Platform:** Jira Cloud REST API
 - **Version Control:** Git & GitHub
 
 ## 🧠 How It Works
-1. **Extracts Request Data** from CowJacket or an external input source.
+1. **Extracts Request Data** from CowJacket database.
 2. **Transforms** request details into Jira-compatible JSON payloads.
 3. **Loads** the transformed data into Jira via REST API POST requests.
 4. **Logs Responses** for success/failure handling.
+
+## 📸 Demo Output
+This shows the successfully created Jira issues using the automation script:
+![Jira Automation Output](image.png)
 
 ## 🔐 Environment Setup
 Create a `.env` file in the project root with your Jira credentials:
@@ -30,7 +34,7 @@ Create a `.env` file in the project root with your Jira credentials:
 JIRA_BASE_URL=https://your-domain.atlassian.net
 JIRA_EMAIL=your_email@example.com
 JIRA_API_TOKEN=your_generated_token
-JIRA_PROJECT_KEY=COW
+JIRA_PROJECT_KEY=COWCX
 ```
 
 ## 🧩 Example Usage
