@@ -39,7 +39,8 @@ JIRA_PROJECT_KEY=COWCX
 
 ## 🧩 Example Usage
 ```python
-from jira_automation import create_jira_ticket
+from db_connection import connect_to_db, fetch_requests
+from jira_connection import connect_to_jira, create_jira_issue
 
 issue_data = {
     "summary": "Automated Bug Report from CowJacket",
@@ -64,7 +65,7 @@ Pull requests are welcome! Please open an issue first to discuss changes.
 
 ## 🧑‍💻 Author
 **Olusegun Olukayode**  
-Python Developer | Data Analyst | Automation Enthusiast
+Data and Analytics Engineer | Business Intelligence Analyst | Automation Enthusiast
 
 ---
 _“Automate the routine. Focus on the impactful.”_
