@@ -15,12 +15,13 @@ logging.basicConfig(
     filename=LOG_FILE,
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
     encoding="utf-8"
 )
 
 def start_new_log_section():
     with open(LOG_FILE, "a", encoding="utf-8") as file:
-        file.write("\n" +  "=" * 60  + "\n")
+        file.write("\n" +  "=" * 100  + "\n")
 
 def sync_requests_to_jira():
     """Main workflow: read DB rows, create Jira issues, update DB."""
