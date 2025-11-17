@@ -23,8 +23,8 @@ def start_new_log_section():
     with open(LOG_FILE, "a", encoding="utf-8") as file:
         file.write("\n" +  "=" * 100  + "\n")
 
-def sync_requests_to_jira():
-    """Main workflow: read DB rows, create Jira issues, update DB."""
+def create_issues_in_jira():
+    """Main workflow: read DB rows, create Jira issues."""
     jira_project_key = os.getenv("JIRA_PROJECT_KEY")
 
     start_new_log_section()
@@ -74,4 +74,4 @@ def sync_requests_to_jira():
 
 
 if __name__ == "__main__":
-    sync_requests_to_jira()
+    create_issues_in_jira()
